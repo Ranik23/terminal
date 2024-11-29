@@ -32,7 +32,7 @@ function createWebSocket(term, updatePrompt) {
         console.error("[ERROR] Error during WebSocket calls:", error);
       });
   };
-
+``
   socket.onclose = () => {
     term.write("\r\n\x1b[31m[INFO] Connection closed. Retrying in 2 seconds...\x1b[0m");
     setTimeout(() => createWebSocket(term, updatePrompt), 2000);
